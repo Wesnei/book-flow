@@ -9,9 +9,9 @@ const handleResponse = (res, status, message, data = null) => {
 };
 
 export const createBook = async (req, res, next) => {
-    const { title, author, genre, publishedYear } = req.body;
+    const { title, author, price, quantity, genre, description, published_year } = req.body;
     try {
-        const newBook = await createBookService(title, author, genre, publishedYear);
+        const newBook = await createBookService(title, author, price, quantity, genre, description, published_year);
         handleResponse(res, 201, "Livro criado com sucesso", newBook);
     } catch (err) {
         next(err);
@@ -38,9 +38,9 @@ export const getBookById = async (req, res, next) => {
 };
 
 export const updateBook = async (req, res, next) => {
-    const { title, author, genre, publishedYear } = req.body;
+    const { title, author, price, quantity, genre, description, published_year } = req.body;
     try {
-        const updatedBook = await updateBookService(req.params.id, title, author, genre, publishedYear);
+        const updatedBook = await updateBookService(req.params.id, title, author, price, quantity, genre, description, published_year);
         if (!updatedBook) return handleResponse(res, 404, "Livro não encontrado");
         handleResponse(res, 200, "Livro atualizado com sucesso", updatedBook);
     } catch (err) {

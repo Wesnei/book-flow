@@ -10,18 +10,18 @@ export const getBookByIdService = async (id) => {
     return result.rows[0];
 };
 
-export const createBookService = async (title, author, genre, publishedYear) => {
+export const createBookService = async (title, author, price, quantity, genre, description, publishedYear) => {
     const result = await pool.query(
-        "INSERT INTO books (title, author, genre, published_year) VALUES ($1, $2, $3, $4) RETURNING *",
-        [title, author, genre, publishedYear]
+        "INSERT INTO books (title, author, price, quantity, genre, description, published_year) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+        [title, author, price, quantity, genre, description, publishedYear]
     );
     return result.rows[0];
 };
 
-export const updateBookService = async (id, title, author, genre, publishedYear) => {
+export const updateBookService = async (id, title, author, price, quantity, genre, description, publishedYear) => {
     const result = await pool.query(
-        "UPDATE books SET title=$1, author=$2, genre=$3, published_year=$4 WHERE id=$5 RETURNING *",
-        [title, author, genre, publishedYear, id]
+        "UPDATE books SET title=$1, price=$2, quantity=$3, author=$4, genre=$5, description=$6, published_year=$7 WHERE id=$8 RETURNING *",
+        [title, author, price, quantity, genre, description, publishedYear, id]
     );
     return result.rows[0];
 };

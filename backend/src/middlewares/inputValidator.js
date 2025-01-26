@@ -2,8 +2,11 @@ import Joi from "joi";
 
 const bookSchema = Joi.object({
     title: Joi.string().min(3).required(),
+    price: Joi.number().integer().min(0).required(),
+    quantity: Joi.number().integer().min(0).required(),
     author: Joi.string().min(3).required(),
     genre: Joi.string().min(3).optional(),
+    description: Joi.string().min(3).required(),
     published_year: Joi.number().integer().min(0).required()
 });
 
