@@ -20,7 +20,7 @@ export const createBookService = async (title, author, price, quantity, genre, d
 
 export const updateBookService = async (id, title, author, price, quantity, genre, description, publishedYear) => {
     const result = await pool.query(
-        "UPDATE books SET title=$1, price=$2, quantity=$3, author=$4, genre=$5, description=$6, published_year=$7 WHERE id=$8 RETURNING *",
+        "UPDATE books SET title=$1, author=$2, price=$3, quantity=$4, genre=$5, description=$6, published_year=$7 WHERE id=$8 RETURNING *",
         [title, author, price, quantity, genre, description, publishedYear, id]
     );
     return result.rows[0];
