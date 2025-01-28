@@ -20,7 +20,7 @@ app.use('/api', bookRoutes);
 
 app.use(errorHandling);
 
-// Criação da tabela de livros
+// Criação da tabela de livros e adição de livros de exemplo
 createBookTable();
 
 app.get("/", async (req, res) => {
