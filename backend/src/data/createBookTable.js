@@ -5,7 +5,7 @@ const createBookTable = async () => {
         CREATE TABLE IF NOT EXISTS books (
             id SERIAL PRIMARY KEY,
             title VARCHAR(255) NOT NULL,
-            price INT NOT NULL,
+            price DECIMAL NOT NULL,
             quantity INT NOT NULL,
             author VARCHAR(255) NOT NULL,
             genre VARCHAR(100),
@@ -15,6 +15,7 @@ const createBookTable = async () => {
         );
     `;
 
+    /*
     const insertBooksQuery = `
         INSERT INTO books (title, price, quantity, author, genre, description, published_year)
         VALUES
@@ -22,6 +23,7 @@ const createBookTable = async () => {
             ('Book Two', 150, 5, 'Author Two', 'Non-Fiction', 'Description Two', 2019)
         ON CONFLICT DO NOTHING;
     `;
+    */
 
     try {
         await pool.query(createTableQuery);

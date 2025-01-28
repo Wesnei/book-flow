@@ -1,43 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../services/axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditBook = () => {
     const { id } = useParams();
-    const [book, setBook] = useState({
-        title: '',
-        author: '',
-        price: '',
-        quantity: '',
-        genre: '',
-        description: '',
-        published_year: ''
-    });
+    const [book, setBook] = useState({});
 
     const navigate = useNavigate();
 
+    
     useEffect(() => {
         const fetchBook = async () => {
             try {
-                const response = await axios.get(`http://localhost:5442/api/book/${id}`);
+                const response = await axios.get(`/book/${id}`);
                 setBook(response.data.data); // Certifique-se de acessar a chave correta da resposta
             } catch (error) {
                 console.error('Erro ao buscar livro:', error);
             }
         };
-
+        
         fetchBook();
     }, [id]);
-
+    
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setBook({ ...book, [name]: value });
     };
-
+    
     const handleUpdateBook = async (e) => {
         e.preventDefault();
+
+        const {title, author, price, quantity, genre, description, published_year} = book;
+
         try {
-            await axios.put(`http://localhost:5442/api/book/${id}`, book);
+            await axios.put(`/book/${id}`, {title, author, price, quantity, genre, description, published_year});
             navigate('/'); // Redireciona para a página inicial após editar o livro
         } catch (error) {
             console.error('Erro ao atualizar livro:', error);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../services/axios';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,7 +9,7 @@ const Home = () => {
     useEffect(() => {
         const fetchBooks = async () => {
             try {
-                const response = await axios.get('http://localhost:5442/api/book');
+                const response = await axios.get('/book');
                 setBooks(response.data.data);
             } catch (error) {
                 console.error('Erro ao buscar livros:', error);
@@ -21,7 +21,7 @@ const Home = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5442/api/book/${id}`);
+            await axios.delete(`/book/${id}`);
             setBooks(books.filter(book => book.id !== id));
         } catch (error) {
             console.error('Erro ao excluir livro:', error);

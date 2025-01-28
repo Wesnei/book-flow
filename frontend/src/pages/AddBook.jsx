@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../services/axios';
 import { useNavigate } from 'react-router-dom';
 
 const AddBook = () => {
-    const [book, setBook] = useState({
-        title: '',
-        author: '',
-        price: '',
-        quantity: '',
-        genre: '',
-        description: '',
-        published_year: ''
-    });
+    const [book, setBook] = useState({});
 
     const navigate = useNavigate();
 
@@ -23,7 +15,7 @@ const AddBook = () => {
     const handleAddBook = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5442/api/book', book);
+            await axios.post('/book', book);
             navigate('/'); // Redireciona para a página inicial após cadastrar o livro
         } catch (error) {
             console.error('Erro ao adicionar livro:', error);
