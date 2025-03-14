@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #d5e1e9;
+    padding: 10px 20px; /* Diminui um pouco o padding para dar mais espaço para a logo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: left; /* Alinha à esquerda */
+    align-items: center; /* Centraliza verticalmente */
+  }
+  
+  .navbar-logo {
+    margin-left: 2rem; /* Ajusta o espaço à esquerda */
+    margin-top: -10px; /* Ajuste negativo para subir mais a logo */
+    height: 85px; /* Aumenta a altura da logo */
+    width: 95px; /* Mantém a proporção da imagem */
+  }
+  
