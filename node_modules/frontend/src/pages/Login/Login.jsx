@@ -51,6 +51,18 @@ const Login = () => {
             </div>
 
             <Button type="submit">Entrar</Button>
+            {/* Adicione o link/botão de "Fazer Cadastro" */}
+            <div className="register-link">
+            <p>
+              Não tem uma conta?{" "}
+              <a href="/cadastrar" onClick={(e) => {
+                e.preventDefault(); // Evita o comportamento padrão do link
+                navigate("/cadastrar"); // Redireciona para a página de cadastro
+              }}>
+                Cadastre-se
+              </a>
+            </p>
+          </div>
 
            
           </form>
