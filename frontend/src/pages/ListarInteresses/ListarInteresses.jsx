@@ -18,9 +18,6 @@ const ListaInteresses = () => {
     { usuario: "Rafael Souza", email: "", telefone: "5585987654321", livro: "Harry Potter e a Pedra Filosofal", idLivro: 8 },
   ];
 
-  const toggleMenu = (index) => {
-    setMenuAberto(menuAberto === index ? null : index);
-  };
 
   return (
     <>
@@ -36,7 +33,6 @@ const ListaInteresses = () => {
                 <th>Email</th>
                 <th>Livro de Interesse</th>
                 <th>ID do Livro</th>
-                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -48,23 +44,6 @@ const ListaInteresses = () => {
                   </td>
                   <td>{item.livro}</td>
                   <td>{item.idLivro}</td>
-                  <td className="acoes-container">
-                    <button className="btn-acoes" onClick={() => toggleMenu(index)}>
-                      <FaEllipsisV />
-                    </button>
-                    {menuAberto === index && (
-                      <div className="dropdown-menu">
-                        <a
-                          href={`https://wa.me/${item.telefone}`}
-                          className="dropdown-item"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaPhone /> Contato via WhatsApp
-                        </a>
-                      </div>
-                    )}
-                  </td>
                 </tr>
               ))}
             </tbody>

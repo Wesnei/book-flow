@@ -4,7 +4,7 @@ import { validateBook } from "../middlewares/inputValidator.js";
 
 const router = express.Router();
 
-// Definindo as rotas
+// Definindo as rotas do crud de livros 
 router.post("/book", validateBook, createBook);
 router.get("/book", getAllBooks);
 router.get("/book/:id", getBookById);

@@ -8,6 +8,7 @@ import RecoverPassword from './pages/RecoverPassword/RecoverPassword';
 import Page404 from './pages/404/Page404';
 import Perfil from './pages/Perfil/Perfil';
 import ListaInteresses from './pages/ListarInteresses/ListarInteresses';
+import Duvidas from './pages/Duvidas/Duvidas';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/recuperar-senha" element={<RecoverPassword />} />
                 <Route path="/add" element={<AddBook />} />
                 <Route path="/edit/:id" element={<EditBook />} />
+                <Route path="/duvidas" element={<Duvidas />} />
                 <Route path="/listarinteresses" element={<ListaInteresses />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="*" element={<Page404 />} />

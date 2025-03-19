@@ -36,10 +36,11 @@ export default function Perfil() {
           <button className="botao-sair">
            <i class="fas fa-sign-out-alt"></i>
           Sair</button>
-        </div>
-        
+        </div> 
       </div>
-      
+      <h2 className="book-help">
+        Precisa de <a href="/duvidas">AJUDA?</a>
+      </h2>
       <Footer />
     </>
   );

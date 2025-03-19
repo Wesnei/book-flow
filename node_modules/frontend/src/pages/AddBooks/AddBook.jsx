@@ -133,7 +133,7 @@ const AddBook = () => {
         </div>
       </form>
       <h2 className="book-help">
-        Precisa de <a href="#help">AJUDA?</a>
+        Precisa de <a href="/duvidas">AJUDA?</a>
       </h2>
       <Footer />
     </div>

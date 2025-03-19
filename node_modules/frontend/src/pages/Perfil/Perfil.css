@@ -63,7 +63,7 @@ h2 {
 
 .botao-sair {
   position: relative;
-  background-color: #cc8238;
+  background-color: #3e466d;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -79,5 +79,5 @@ h2 {
 }
 
 .botao-sair:hover {
-  background-color: #3e466d;
+  background-color: #ff0000;
 }

@@ -14,7 +14,10 @@ const MainNavbar = () => {
           <Link to="/add">Adicionar Livro</Link>
         </li>
         <li>
-          <Link to="/">Editar Livros</Link>
+          <Link to="/">Administrar Livros</Link>
+        </li>
+        <li>
+          <Link to="/duvidas">Dúvidas</Link>
         </li>
         <li>
           <Link to="/listarinteresses">Listar Interesses</Link>

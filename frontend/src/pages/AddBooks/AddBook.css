@@ -70,12 +70,13 @@ body {
 .book-help {
   margin-top: 2rem;
   text-align: center;
-  font-weight: bold;
+  font-size: 22px;
 }
 
 .book-help a {
   text-decoration: none;
-  color: #007bff;
+  font-weight: 900;
+  color: #1f2d5d;
 }
 
 footer {
