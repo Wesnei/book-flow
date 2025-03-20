@@ -29,6 +29,7 @@ body {
   border-radius: 8px;
   object-fit: cover; 
   transition: transform 0.3s ease; 
+  padding-right: 15px;
 }
 
 .imagem-lado:hover {
@@ -117,7 +118,7 @@ button[type="submit"]:hover {
   color: #0066cc;
   font-size: 14px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .forgot-password a:hover {

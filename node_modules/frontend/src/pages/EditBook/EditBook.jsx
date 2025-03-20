@@ -36,7 +36,7 @@ const EditBook = () => {
 
     try {
       await axios.put(`/book/${id}`, { title, author, price, quantity, genre, description, published_year });
-      navigate("/livros"); // Redireciona para a página de livros após a atualização
+      navigate("/livros"); 
     } catch (error) {
       console.error("Erro ao atualizar livro:", error);
     }

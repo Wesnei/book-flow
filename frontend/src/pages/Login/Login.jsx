@@ -4,16 +4,26 @@ import "./Login.css";
 import library from "../../assets/library.png";
 import Button from "../../components/Button/Button";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate } from "react-router-dom"; // Importe o useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const navigate = useNavigate(); // Inicialize o useNavigate
+  const [error, setError] = useState(""); // Estado para mensagens de erro
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validação básica
+    if (!email || !senha) {
+      setError("Por favor, preencha todos os campos.");
+      return;
+    }
+
+    // Simulação de login bem-sucedido
     console.log("Dados do formulário:", { email, senha });
+    setError(""); // Limpa mensagens de erro
     navigate("/home"); // Redireciona para a Home após o login
   };
 
@@ -47,25 +57,28 @@ const Login = () => {
               />
             </div>
 
+            {error && <p className="error-message">{error}</p>} {/* Exibe mensagens de erro */}
+
             <div className="forgot-password">
               <a href="/recuperar-senha">Esqueceu a senha?</a>
             </div>
 
             <Button type="submit">Entrar</Button>
-            
-            <div className="register-link">
-            <p>
-              Não tem uma conta?{" "}
-              <a href="/cadastrar" onClick={(e) => {
-                e.preventDefault(); 
-                navigate("/cadastrar"); 
-              }}>
-                Cadastre-se
-              </a>
-            </p>
-          </div>
 
-           
+            <div className="register-link">
+              <p>
+                Não tem uma conta?{" "}
+                <a
+                  href="/cadastrar"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/cadastrar");
+                  }}
+                >
+                  Cadastre-se
+                </a>
+              </p>
+            </div>
           </form>
         </div>
       </div>

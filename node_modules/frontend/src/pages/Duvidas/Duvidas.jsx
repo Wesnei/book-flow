@@ -56,6 +56,9 @@ function Duvidas() {
               </form>
               {enviado && <p className="success-msg">Sua dúvida foi enviada com sucesso!</p>}
           </div>
+          <h2 className="book-help">
+        Precisa de <a href="/duvidas">AJUDA?</a>
+      </h2> 
       </div>
       <Footer />
       </>

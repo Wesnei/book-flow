@@ -4,7 +4,6 @@ import Button from "../../components/Button/Button";
 import "./Cadastro.css";
 import library from "../../assets/library.png";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer"; // Importe o Footer
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -74,11 +73,24 @@ const Cadastro = () => {
                 required
               />
             </div>
+            <div className="register-link">
+              <p>
+                Já tem uma conta?{" "}
+                <a
+                  href="/cadastrar"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/");
+                  }}
+                >
+                  Entre agora
+                </a>
+              </p>
+            </div>
             <Button type="submit">Cadastrar</Button>
           </form>
         </div>
       </div>
-      <Footer /> {/* Adicione o Footer aqui */}
     </div>
   );
 };

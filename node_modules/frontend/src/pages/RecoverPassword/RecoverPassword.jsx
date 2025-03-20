@@ -19,30 +19,32 @@ const RecoverPassword = () => {
   };
 
   return (
-    <div className="login-wrapper">
+    <div className="recover-password-wrapper">
       <Navbar />
-      <img src={library} alt="livraria" className="imagem-lado" />
-      <div className="login-container">
-        <h1>Recuperação de Senha</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>E-mail</label>
-            <FormInput
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Digite seu e-mail"
-              required
-            />
+      <div className="content-wrapper">
+        <img src={library} alt="livraria" className="imagem-lado" />
+        <div className="login-container">
+          <h1>Recuperação de Senha</h1>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label>E-mail</label>
+              <FormInput
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <Button>Enviar</Button>
+          </form>
+
+          {message && <p className="message">{message}</p>}
+
+          <div className="forgot-password">
+            <a href="/">Voltar para o Login</a>
           </div>
-
-          <Button>Enviar</Button>
-        </form>
-
-        {message && <p className="message">{message}</p>}
-
-        <div className="forgot-password">
-          <a href="/">Voltar para o Login</a>
         </div>
       </div>
     </div>

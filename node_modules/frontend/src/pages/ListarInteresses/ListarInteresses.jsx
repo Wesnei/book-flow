@@ -49,9 +49,9 @@ const ListaInteresses = () => {
             </tbody>
           </table>
         </div>
-        <p className="paragraph">
-          Precisa de <strong>Ajuda?</strong>
-        </p>      
+        <h2 className="book-help">
+        Precisa de <a href="/duvidas">AJUDA?</a>
+      </h2>    
         </div>
       <Footer />
     </>

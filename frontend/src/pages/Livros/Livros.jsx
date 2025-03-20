@@ -3,7 +3,7 @@ import axios from "../../services/axios";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Livros.css";
-import Navbar from "../../components/Navbar/Navbar";
+import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import Footer from "../../components/Footer/Footer";
 
 const Livros = () => {
@@ -33,7 +33,7 @@ const Livros = () => {
 
   return (
     <div className="livros-container">
-      <Navbar />
+      <MainNavbar />
       <header className="header">
         <div className="header-left">
           <h1 className="titulo-inclinado">ADMINISTRAR LIVROS</h1>
