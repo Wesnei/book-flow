@@ -1,0 +1,116 @@
+.livros-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1f2d5d;
+    color: white;
+  }
+  
+  .header-left h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .header-right .btn {
+    background-color: #f7f7f7;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: rgb(3, 1, 7);
+    text-decoration: none;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+  }
+  
+  .header-right .btn:hover {
+    background-color: #d5e1e9;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+  
+  .card {
+    border: 2px solid #1f2d5d;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2d5d;
+  }
+  
+  .card-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    color: #333;
+    
+  }
+  
+  .btn-warning {
+    background-color: #f8f3f3;
+    border-color: #1f2d5d;
+    color: #000;
+  }
+  
+  .btn-warning:hover {
+    background-color: #1f2d5d;
+    color: #f7f7f7;
+  }
+  
+  .btn-danger {
+    background-color: #bfbac2;
+    border: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .btn-danger:hover {
+    background-color: #1f2d5d;
+  }
+  
+  .footer {
+    background-color: #1f2d5d;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  .footer-content p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Nova classe para os botões */
+  .livro-actions {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 10px; /* Margem superior para separar dos outros elementos */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+  }
+  
+  .livro-actions .btn {
+    flex: 1; /* Faz os botões terem o mesmo tamanho */
+    max-width: 120px; /* Define uma largura máxima para os botões */
+    text-align: center; /* Centraliza o texto dentro dos botões */
+  }

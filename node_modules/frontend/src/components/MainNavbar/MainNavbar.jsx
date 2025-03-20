@@ -11,10 +11,10 @@ const MainNavbar = () => {
       </Link>
       <ul>
         <li>
-          <Link to="/add">Adicionar Livro</Link>
+          <Link to="/home">Home</Link> {/* Nova opção Home */}
         </li>
         <li>
-          <Link to="/">Administrar Livros</Link>
+          <Link to="/livros">Administrar Livros</Link> {/* Alterado para /livros */}
         </li>
         <li>
           <Link to="/duvidas">Dúvidas</Link>

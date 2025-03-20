@@ -21,7 +21,7 @@ const AddBook = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
+  
     const data = {
       title,
       author,
@@ -31,17 +31,16 @@ const AddBook = () => {
       description,
       published_year: Number(publishedYear),
     };
-
+  
     try {
       await axios.post("/book", data);
       alert("Livro cadastrado com sucesso!");
-      navigate("/");
+      navigate("/livros"); // Redireciona para a página de livros após o cadastro
     } catch (error) {
       console.error("Erro ao adicionar livro:", error);
       setError("Erro ao cadastrar livro. Tente novamente.");
     }
   };
-
   return (
     <div className="add-book-container">
       <MainNavbar />
@@ -128,7 +127,7 @@ const AddBook = () => {
           </div>
 
           <div className="form-submit-btn">
-            <Button type="submit">Cadastrar Livro</Button>
+            <Button type="submit">Cadastrar</Button>
           </div>
         </div>
       </form>

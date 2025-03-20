@@ -1,0 +1,91 @@
+.edit-book-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.edit-book-form-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  margin-top: 110px;
+}
+
+.edit-book-form {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.edit-book-form h2 {
+  grid-column: span 2;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1f2d5d;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #3e466d;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-submit-btn {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo específico para o botão de "Atualizar" */
+.form-submit-btn .button {
+  padding: 15px 15px; /* Reduzi o padding para deixar o botão menor */
+  font-size: 12px; /* Reduzi o tamanho da fonte */
+  width: 120px; /* Defini uma largura fixa para o botão */
+  margin-top: 10px; /* Ajustei a margem superior */
+}
+
+@media (max-width: 768px) {
+  .edit-book-form {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .edit-book-form h2 {
+    grid-column: span 1;
+  }
+
+  .form-submit-btn {
+    grid-column: span 1;
+  }
+}

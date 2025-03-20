@@ -14,6 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Dados do formulário:", { email, senha });
+    navigate("/home"); // Redireciona para a Home após o login
   };
 
   return (
