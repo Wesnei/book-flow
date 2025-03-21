@@ -6,11 +6,13 @@ import Button from "../../components/Button/Button";
 import Navbar from "../../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,21 +29,26 @@ const Login = () => {
         password: senha,
       });
 
-      console.log("Resposta do backend:", response.data); 
+      console.log("Resposta do backend:", response.data);
 
-      if (response.data.success && response.data.token) {
+      if (
+        response.data.message === "Login bem-sucedido!" &&
+        response.data.token
+      ) {
         localStorage.setItem("token", response.data.token);
         setError("");
 
         console.log("Login bem-sucedido. Redirecionando para /home");
-        navigate("/home"); 
+        navigate("/home");
       } else {
         console.log("Login falhou:", response.data.message);
         setError(response.data.message || "Erro ao fazer login.");
       }
     } catch (error) {
       console.error("Erro de login:", error);
-      setError(error.response?.data?.message || "Erro ao fazer login. Tente novamente.");
+      setError(
+        error.response?.data?.message || "Erro ao fazer login. Tente novamente."
+      );
     }
   };
 
@@ -66,13 +73,22 @@ const Login = () => {
 
             <div className="form-group">
               <label>Senha</label>
-              <FormInput
-                type="password"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                placeholder="Digite sua senha"
-                required
-              />
+              <div className="password-container">
+                <FormInput
+                  type={showPassword ? "text" : "password"} 
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                  placeholder="Digite sua senha"
+                  required
+                />
+                <button
+                  type="button"
+                  className="eye-icon"
+                  onClick={() => setShowPassword(!showPassword)} 
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
             </div>
 
             {error && <p className="error-message">{error}</p>}

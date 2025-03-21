@@ -1,12 +1,12 @@
-
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import MainNavbar from "../../components/MainNavbar/MainNavbar";
 import Footer from "../../components/Footer/Footer";
-
 import "./Perfil.css";
 
 export default function Perfil() {
   const [image, setImage] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -17,6 +17,16 @@ export default function Perfil() {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  // Handle logout by redirecting to login page
+  const handleLogout = () => {
+    // You might want to clear any user data (e.g., from localStorage, sessionStorage, or context)
+    // localStorage.removeItem("user");
+    // sessionStorage.removeItem("user");
+
+    // Redirect to the login page
+    navigate("/"); // This will navigate to the root URL (login page)
   };
 
   return (
@@ -31,11 +41,12 @@ export default function Perfil() {
               {image ? <img src={image} alt="Foto do usuário" /> : <span>+</span>}
             </div>
           </label>
-          <p className="perfil-nome">Nome Sobrenome</p>
-          <p className="perfil-email">example@gmail.com</p>
-          <button className="botao-sair">
-           <i class="fas fa-sign-out-alt"></i>
-          Sair</button>
+          <p className="perfil-nome">Wesnei Paiva</p>
+          <p className="perfil-email">wesnei@gmail.com</p>
+          <button className="botao-sair" onClick={handleLogout}>
+            <i className="fas fa-sign-out-alt"></i>
+            Sair
+          </button>
         </div> 
       </div>
       <h2 className="book-help">

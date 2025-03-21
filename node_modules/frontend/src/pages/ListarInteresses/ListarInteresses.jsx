@@ -5,17 +5,15 @@ import "./ListarInteresses.css";
 import { FaPhone, FaEllipsisV } from "react-icons/fa";
 
 const ListaInteresses = () => {
-  const [menuAberto, setMenuAberto] = useState(null);
-
   const interesses = [
-    { usuario: "João Sousa", email: "example@email.com", telefone: "5585987654321", livro: "O Pequeno Príncipe", idLivro: 1 },
-    { usuario: "Maria Silva", email: "example@email.com", telefone: "5585987654321", livro: "1984", idLivro: 2 },
-    { usuario: "Carlos Oliveira", email: "example@email.com", telefone: "5585987654321", livro: "Dom Quixote", idLivro: 3 },
+    { usuario: "João Sousa", email: "joao@email.com", telefone: "5585987654321", livro: "O Pequeno Príncipe", idLivro: 1 },
+    { usuario: "Maria Silva", email: "mari@email.com", telefone: "5585987654321", livro: "1984", idLivro: 2 },
+    { usuario: "Carlos Oliveira", email: "carlao@email.com", telefone: "5585987654321", livro: "Dom Quixote", idLivro: 3 },
     { usuario: "Ana Costa", email: "", telefone: "5585987654321", livro: "Cem Anos de Solidão", idLivro: 4 },
     { usuario: "Pedro Alves", email: "", telefone: "5585987654321", livro: "A Revolução dos Bichos", idLivro: 5 },
     { usuario: "Luiza Mendes", email: "", telefone: "5585987654321", livro: "Orgulho e Preconceito", idLivro: 6 },
-    { usuario: "Fernanda Lima", email: "", telefone: "5585987654321", livro: "O Hobbit", idLivro: 7 },
-    { usuario: "Rafael Souza", email: "", telefone: "5585987654321", livro: "Harry Potter e a Pedra Filosofal", idLivro: 8 },
+    { usuario: "Fernanda Lima", email: "nanda@email.com", telefone: "5585987654321", livro: "O Hobbit", idLivro: 7 },
+    { usuario: "Rafael Souza", email: "rafaelsousa13@email.com", telefone: "5585987654321", livro: "Harry Potter e a Pedra Filosofal", idLivro: 8 },
   ];
 
 

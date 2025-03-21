@@ -125,6 +125,41 @@ button[type="submit"]:hover {
   text-decoration: underline;
 }
 
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 30px; 
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 40px; 
+}
+
+.eye-icon {
+  position: absolute;
+  left: 130px; 
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; 
+  color: #000; 
+  outline: none; 
+}
+
+.eye-icon:focus,
+.eye-icon:hover {
+  outline: none;
+  background: none; 
+}
+
 @media (max-width: 768px) {
   .login-wrapper {
     flex-direction: column;

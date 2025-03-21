@@ -16,23 +16,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+  flex-grow: 1;
   gap: 20px;
   padding: 20px;
-  margin-top: 60px; /* Ajuste para o espaço do Navbar */
+  margin-top: 60px;
 }
 
 .imagem-lado {
-  width: 400px; /* Defina a largura desejada */
-  height: 500px; /* Defina a altura desejada */
+  width: 400px;
+  height: 500px;
   border-radius: 8px;
-  object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+  object-fit: cover;
 }
 
 .cadastro-container {
-  width: 400px; /* Mesma largura da imagem */
-  height: auto; /* Altura automática para se ajustar ao conteúdo */
-  padding: 15px; /* Reduzi o padding para compactar o formulário */
+  width: 400px;
+  height: auto;
+  padding: 15px;
   border: 1px solid #ffffff;
   border-radius: 10px;
   background-color: #fff;
@@ -44,7 +44,7 @@ body {
 
 .cadastro-container h1 {
   text-align: center;
-  margin-bottom: 10px; /* Reduzi a margem inferior do título */
+  margin-bottom: 10px;
   color: #3e466d;
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 20px;
@@ -52,26 +52,24 @@ body {
 }
 
 .form-group {
-  margin-bottom: 10px; /* Reduzi a margem inferior dos grupos de formulário */
+  margin-bottom: 10px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 2px; /* Reduzi a distância entre a label e o FormInput */
+  margin-bottom: 2px;
   font-weight: 500;
   color: #3e466d;
 }
 
-/* Estilo para os inputs */
 .form-group input {
   width: 100%;
-  padding: 8px; /* Reduzi o padding dos inputs */
+  padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
 }
 
-/* Estilo para o botão */
 .cadastro-container button {
   width: 100%;
   padding: 10px;
@@ -81,10 +79,9 @@ body {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; /* Reduzi a margem superior do botão */
+  margin-top: 10px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .cadastro-wrapper {
     flex-direction: column;
@@ -93,15 +90,15 @@ body {
   }
 
   .imagem-lado {
-    width: 100%; /* A imagem ocupa a largura total em dispositivos móveis */
-    height: auto; /* Altura automática em dispositivos móveis */
+    width: 100%;
+    height: auto;
     margin: 0 auto 20px;
   }
 
   .cadastro-container {
-    width: 90%; /* O formulário ocupa 90% da largura em dispositivos móveis */
-    max-width: 400px; /* Largura máxima */
-    padding: 10px; /* Reduzi o padding em dispositivos móveis */
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
   }
 
   .cadastro-container h1 {

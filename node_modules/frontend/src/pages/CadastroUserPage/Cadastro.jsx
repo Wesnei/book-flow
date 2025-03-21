@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; // Importe o Axios
+import axios from "axios"; 
 import FormInput from "../../components/FormInput/FormInput";
 import Button from "../../components/Button/Button";
 import "./Cadastro.css";
@@ -27,6 +27,7 @@ const Cadastro = () => {
     try {
       const response = await axios.post("http://localhost:3001/auth/register", {
         username: nome, 
+        email: email,
         password: senha,
         confirmPassword: confirmarSenha,
       });
@@ -99,7 +100,7 @@ const Cadastro = () => {
                   href="/"
                   onClick={(e) => {
                     e.preventDefault();
-                    navigate("/"); // Redireciona para a rota de login ("/")
+                    navigate("/"); 
                   }}
                 >
                   Entre agora
