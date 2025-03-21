@@ -15,6 +15,7 @@ const AddBook = () => {
   const [genre, setGenre] = useState("");
   const [description, setDescription] = useState("");
   const [publishedYear, setPublishedYear] = useState("");
+  const [url, setUrl] = useState(""); // New state for the URL
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -31,16 +32,22 @@ const AddBook = () => {
       description,
       published_year: Number(publishedYear),
     };
-  
+
+    // Only include URL in the data if it's not empty
+    if (url) {
+      data.url = url;
+    }
+
     try {
       await axios.post("/book", data);
       alert("Livro cadastrado com sucesso!");
-      navigate("/livros"); // Redireciona para a página de livros após o cadastro
+      navigate(`/livros/${title}`); // Redirect to the specific book page after successful submission
     } catch (error) {
       console.error("Erro ao adicionar livro:", error);
       setError("Erro ao cadastrar livro. Tente novamente.");
     }
   };
+
   return (
     <div className="add-book-container">
       <MainNavbar />
@@ -123,6 +130,17 @@ const AddBook = () => {
               placeholder="Ano de publicação"
               value={publishedYear}
               onChange={(e) => setPublishedYear(e.target.value)}
+            />
+          </div>
+
+          {/* New URL field */}
+          <div className="form-group">
+            <label>URL (Opcional)</label>
+            <FormInput
+              type="url"
+              placeholder="Ex: https://link-para-o-livro.com"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
             />
           </div>
 
