@@ -8,11 +8,12 @@ datasource db {
 }
 
 model User {
-  @@map("users")
+  @@map("users") 
 
   id Int @id @default(autoincrement())
-  nome String
+  username String // Certifique-se de que está como "username"
   email String @unique
+  password String  
 }
 
 model Book {
@@ -20,7 +21,7 @@ model Book {
 
   id Int @id @default(autoincrement())
   title String @db.VarChar(255)
-  price Decimal @db.Decimal(8, 2)
+  price Decimal @db.Decimal(8, 2) @default(0) // Define valor padrão 0
   quantity Int
   author String @db.VarChar(255)
   genre String @db.VarChar(255)

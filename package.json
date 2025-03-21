@@ -8,8 +8,10 @@
         "concurrently": "^8.2.2"
     },
     "dependencies": {
+        "@prisma/client": "^6.5.0",
         "axios": "^1.8.1",
         "backend": "file:backend",
+        "bcryptjs": "^3.0.2",
         "bootstrap": "^5.3.3",
         "frontend": "file:frontend",
         "react-icons": "^5.5.0",
