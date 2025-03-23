@@ -41,7 +41,7 @@ const AddBook = () => {
     try {
       await axios.post("/book", data);
       alert("Livro cadastrado com sucesso!");
-      navigate(`/livros/${title}`); // Redirect to the specific book page after successful submission
+      navigate(`/livros`); 
     } catch (error) {
       console.error("Erro ao adicionar livro:", error);
       setError("Erro ao cadastrar livro. Tente novamente.");

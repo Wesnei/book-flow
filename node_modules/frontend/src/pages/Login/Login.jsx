@@ -20,7 +20,7 @@ const Login = () => {
 
     if (!email || !senha) {
       setError("Por favor, preencha todos os campos.");
-      return;
+      alert("Por favor, preencha todos os campos."); 
     }
 
     try {
@@ -37,18 +37,21 @@ const Login = () => {
       ) {
         localStorage.setItem("token", response.data.token);
         setError("");
-
+        
+        alert("Login bem-sucedido! Redirecionando para a página inicial."); 
         console.log("Login bem-sucedido. Redirecionando para /home");
         navigate("/home");
       } else {
         console.log("Login falhou:", response.data.message);
         setError(response.data.message || "Erro ao fazer login.");
+        alert(response.data.message || "Erro ao fazer login."); 
       }
     } catch (error) {
       console.error("Erro de login:", error);
       setError(
         error.response?.data?.message || "Erro ao fazer login. Tente novamente."
       );
+      alert(error.response?.data?.message || "Erro ao fazer login. Tente novamente."); 
     }
   };
 

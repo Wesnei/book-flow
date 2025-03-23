@@ -132,23 +132,20 @@
 }
 
 .btn-edit {
-  background-color: #ffc107; /* Amarelo */
-  border-color: #ffc107;
-  color: #000;
+  background-color: #3e466d; 
+  color: #f3ebeb;
 }
 
 .btn-edit:hover {
-  background-color: #e0a800; /* Tom mais escuro de amarelo */
-  border-color: #d39e00;
+  background-color: #0066cc;
 }
 
 .btn-delete {
-  background-color: #dc3545; /* Vermelho */
-  border-color: #dc3545;
+  background-color: #dc3545; 
   color: white;
 }
 
 .btn-delete:hover {
-  background-color: #c82333; /* Tom mais escuro de vermelho */
+  background-color: #c82333; 
   border-color: #bd2130;
 }

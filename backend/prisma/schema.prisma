@@ -21,7 +21,7 @@ model Book {
 
   id Int @id @default(autoincrement())
   title String @db.VarChar(255)
-  price Decimal @db.Decimal(8, 2) @default(0) // Define valor padrão 0
+  price Decimal @db.Decimal(8, 2) @default(0) 
   quantity Int
   author String @db.VarChar(255)
   genre String @db.VarChar(255)

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import FormInput from "../../components/FormInput/FormInput";
 import Button from "../../components/Button/Button";
 import "./Cadastro.css";
 import library from "../../assets/library.png";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";  
+import "react-toastify/dist/ReactToastify.css";  
 
 const Cadastro = () => {
   const [nome, setNome] = useState("");
@@ -18,9 +20,11 @@ const Cadastro = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verifica se as senhas coincidem
+    
     if (senha !== confirmarSenha) {
       setErro("As senhas não coincidem!");
+      toast.error("As senhas não coincidem!"); 
+      alert("As senhas não coincidem!");
       return;
     }
 
@@ -34,9 +38,13 @@ const Cadastro = () => {
 
       console.log("Resposta do backend:", response.data);
 
+      toast.success("Cadastro realizado com sucesso!"); 
+      alert("Cadastro realizado com sucesso!"); 
       navigate("/"); 
     } catch (error) {
       setErro(error.response?.data?.message || "Erro ao cadastrar usuário.");
+      toast.error(error.response?.data?.message || "Erro ao cadastrar usuário."); 
+      alert(error.response?.data?.message || "Erro ao cadastrar usuário."); 
       console.error("Erro ao cadastrar:", error);
     }
   };
@@ -111,6 +119,7 @@ const Cadastro = () => {
           </form>
         </div>
       </div>
+      <ToastContainer position="top-center" autoClose={3000} hideProgressBar={true} />  
     </div>
   );
 };
